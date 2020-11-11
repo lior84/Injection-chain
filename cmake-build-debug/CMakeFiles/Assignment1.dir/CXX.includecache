@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/spl211/Assignments/Assignment1/Graph.cpp
+iostream
+-
+Graph.h
+/home/spl211/Assignments/Assignment1/Graph.h
+
+/home/spl211/Assignments/Assignment1/Graph.h
+vector
+-
+
