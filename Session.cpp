@@ -81,3 +81,7 @@ void Session::setTreeType(string typeOf) {
 }
 
 TreeType Session::getTreeType() const {return treeType;}
+
+void Session::addAgent(const Agent &agent) {
+    agents.push_back(const_cast<Agent *>(&agent));
+}

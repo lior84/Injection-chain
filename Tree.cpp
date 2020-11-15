@@ -4,11 +4,11 @@
 
 #include "Tree.h"
 
-Tree::Tree(int rootLabel) : node(rootLabel) {}
-
-
-
-CycleTree::CycleTree(int rootLabel, int currCycle) : Tree(rootLabel)
-{
-
-}
+//Tree::Tree(int rootLabel) : node(rootLabel) {}
+//
+//
+//
+//CycleTree::CycleTree(int rootLabel, int currCycle) : Tree(rootLabel)
+//{
+//
+//}

@@ -27,11 +27,11 @@ int main(int argc, char** argv){
 //
 //    cout << "A";
 
-    Session s("/home/spl211/Assignments/Assignment1/json_files/config1.json");
+    Session s("/home/spl211/spl_1st_assignment/json_files/config1.json");
 
     //Session s1 = s;
-
-    Session s2((Session&&)Session(s));
+    std::vector<Agent*> v2 = {};
+    s.addAgent({})
 
     return 0;
 }

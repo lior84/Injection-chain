@@ -1,4 +1,4 @@
-/home/spl211/clion-2020.2.4/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/spl211/Assignments/Assignment1
+/home/spl211/Downloads/clion-2020.2.4/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/spl211/spl_1st_assignment
 -- Configuring done
 -- Generating done
--- Build files have been written to: /home/spl211/Assignments/Assignment1/cmake-build-debug
+-- Build files have been written to: /home/spl211/spl_1st_assignment/cmake-build-debug
