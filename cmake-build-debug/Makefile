@@ -143,140 +143,140 @@ Assignment1/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Assignment1.dir/build.make CMakeFiles/Assignment1.dir/build
 .PHONY : Assignment1/fast
 
-Agent.o: Agent.cpp.o
+src/Agent.o: src/Agent.cpp.o
 
-.PHONY : Agent.o
-
-# target to build an object file
-Agent.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Assignment1.dir/build.make CMakeFiles/Assignment1.dir/Agent.cpp.o
-.PHONY : Agent.cpp.o
-
-Agent.i: Agent.cpp.i
-
-.PHONY : Agent.i
-
-# target to preprocess a source file
-Agent.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Assignment1.dir/build.make CMakeFiles/Assignment1.dir/Agent.cpp.i
-.PHONY : Agent.cpp.i
-
-Agent.s: Agent.cpp.s
-
-.PHONY : Agent.s
-
-# target to generate assembly for a file
-Agent.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Assignment1.dir/build.make CMakeFiles/Assignment1.dir/Agent.cpp.s
-.PHONY : Agent.cpp.s
-
-Graph.o: Graph.cpp.o
-
-.PHONY : Graph.o
+.PHONY : src/Agent.o
 
 # target to build an object file
-Graph.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Assignment1.dir/build.make CMakeFiles/Assignment1.dir/Graph.cpp.o
-.PHONY : Graph.cpp.o
+src/Agent.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Assignment1.dir/build.make CMakeFiles/Assignment1.dir/src/Agent.cpp.o
+.PHONY : src/Agent.cpp.o
 
-Graph.i: Graph.cpp.i
+src/Agent.i: src/Agent.cpp.i
 
-.PHONY : Graph.i
+.PHONY : src/Agent.i
 
 # target to preprocess a source file
-Graph.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Assignment1.dir/build.make CMakeFiles/Assignment1.dir/Graph.cpp.i
-.PHONY : Graph.cpp.i
+src/Agent.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Assignment1.dir/build.make CMakeFiles/Assignment1.dir/src/Agent.cpp.i
+.PHONY : src/Agent.cpp.i
 
-Graph.s: Graph.cpp.s
+src/Agent.s: src/Agent.cpp.s
 
-.PHONY : Graph.s
+.PHONY : src/Agent.s
 
 # target to generate assembly for a file
-Graph.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Assignment1.dir/build.make CMakeFiles/Assignment1.dir/Graph.cpp.s
-.PHONY : Graph.cpp.s
+src/Agent.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Assignment1.dir/build.make CMakeFiles/Assignment1.dir/src/Agent.cpp.s
+.PHONY : src/Agent.cpp.s
 
-Session.o: Session.cpp.o
+src/Graph.o: src/Graph.cpp.o
 
-.PHONY : Session.o
+.PHONY : src/Graph.o
 
 # target to build an object file
-Session.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Assignment1.dir/build.make CMakeFiles/Assignment1.dir/Session.cpp.o
-.PHONY : Session.cpp.o
+src/Graph.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Assignment1.dir/build.make CMakeFiles/Assignment1.dir/src/Graph.cpp.o
+.PHONY : src/Graph.cpp.o
 
-Session.i: Session.cpp.i
+src/Graph.i: src/Graph.cpp.i
 
-.PHONY : Session.i
+.PHONY : src/Graph.i
 
 # target to preprocess a source file
-Session.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Assignment1.dir/build.make CMakeFiles/Assignment1.dir/Session.cpp.i
-.PHONY : Session.cpp.i
+src/Graph.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Assignment1.dir/build.make CMakeFiles/Assignment1.dir/src/Graph.cpp.i
+.PHONY : src/Graph.cpp.i
 
-Session.s: Session.cpp.s
+src/Graph.s: src/Graph.cpp.s
 
-.PHONY : Session.s
+.PHONY : src/Graph.s
 
 # target to generate assembly for a file
-Session.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Assignment1.dir/build.make CMakeFiles/Assignment1.dir/Session.cpp.s
-.PHONY : Session.cpp.s
+src/Graph.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Assignment1.dir/build.make CMakeFiles/Assignment1.dir/src/Graph.cpp.s
+.PHONY : src/Graph.cpp.s
 
-Tree.o: Tree.cpp.o
+src/Session.o: src/Session.cpp.o
 
-.PHONY : Tree.o
+.PHONY : src/Session.o
 
 # target to build an object file
-Tree.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Assignment1.dir/build.make CMakeFiles/Assignment1.dir/Tree.cpp.o
-.PHONY : Tree.cpp.o
+src/Session.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Assignment1.dir/build.make CMakeFiles/Assignment1.dir/src/Session.cpp.o
+.PHONY : src/Session.cpp.o
 
-Tree.i: Tree.cpp.i
+src/Session.i: src/Session.cpp.i
 
-.PHONY : Tree.i
+.PHONY : src/Session.i
 
 # target to preprocess a source file
-Tree.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Assignment1.dir/build.make CMakeFiles/Assignment1.dir/Tree.cpp.i
-.PHONY : Tree.cpp.i
+src/Session.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Assignment1.dir/build.make CMakeFiles/Assignment1.dir/src/Session.cpp.i
+.PHONY : src/Session.cpp.i
 
-Tree.s: Tree.cpp.s
+src/Session.s: src/Session.cpp.s
 
-.PHONY : Tree.s
+.PHONY : src/Session.s
 
 # target to generate assembly for a file
-Tree.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Assignment1.dir/build.make CMakeFiles/Assignment1.dir/Tree.cpp.s
-.PHONY : Tree.cpp.s
+src/Session.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Assignment1.dir/build.make CMakeFiles/Assignment1.dir/src/Session.cpp.s
+.PHONY : src/Session.cpp.s
 
-main.o: main.cpp.o
+src/Tree.o: src/Tree.cpp.o
 
-.PHONY : main.o
+.PHONY : src/Tree.o
 
 # target to build an object file
-main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Assignment1.dir/build.make CMakeFiles/Assignment1.dir/main.cpp.o
-.PHONY : main.cpp.o
+src/Tree.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Assignment1.dir/build.make CMakeFiles/Assignment1.dir/src/Tree.cpp.o
+.PHONY : src/Tree.cpp.o
 
-main.i: main.cpp.i
+src/Tree.i: src/Tree.cpp.i
 
-.PHONY : main.i
+.PHONY : src/Tree.i
 
 # target to preprocess a source file
-main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Assignment1.dir/build.make CMakeFiles/Assignment1.dir/main.cpp.i
-.PHONY : main.cpp.i
+src/Tree.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Assignment1.dir/build.make CMakeFiles/Assignment1.dir/src/Tree.cpp.i
+.PHONY : src/Tree.cpp.i
 
-main.s: main.cpp.s
+src/Tree.s: src/Tree.cpp.s
 
-.PHONY : main.s
+.PHONY : src/Tree.s
 
 # target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Assignment1.dir/build.make CMakeFiles/Assignment1.dir/main.cpp.s
-.PHONY : main.cpp.s
+src/Tree.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Assignment1.dir/build.make CMakeFiles/Assignment1.dir/src/Tree.cpp.s
+.PHONY : src/Tree.cpp.s
+
+src/main.o: src/main.cpp.o
+
+.PHONY : src/main.o
+
+# target to build an object file
+src/main.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Assignment1.dir/build.make CMakeFiles/Assignment1.dir/src/main.cpp.o
+.PHONY : src/main.cpp.o
+
+src/main.i: src/main.cpp.i
+
+.PHONY : src/main.i
+
+# target to preprocess a source file
+src/main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Assignment1.dir/build.make CMakeFiles/Assignment1.dir/src/main.cpp.i
+.PHONY : src/main.cpp.i
+
+src/main.s: src/main.cpp.s
+
+.PHONY : src/main.s
+
+# target to generate assembly for a file
+src/main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Assignment1.dir/build.make CMakeFiles/Assignment1.dir/src/main.cpp.s
+.PHONY : src/main.cpp.s
 
 # Help Target
 help:
@@ -287,21 +287,21 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... Assignment1"
-	@echo "... Agent.o"
-	@echo "... Agent.i"
-	@echo "... Agent.s"
-	@echo "... Graph.o"
-	@echo "... Graph.i"
-	@echo "... Graph.s"
-	@echo "... Session.o"
-	@echo "... Session.i"
-	@echo "... Session.s"
-	@echo "... Tree.o"
-	@echo "... Tree.i"
-	@echo "... Tree.s"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
+	@echo "... src/Agent.o"
+	@echo "... src/Agent.i"
+	@echo "... src/Agent.s"
+	@echo "... src/Graph.o"
+	@echo "... src/Graph.i"
+	@echo "... src/Graph.s"
+	@echo "... src/Session.o"
+	@echo "... src/Session.i"
+	@echo "... src/Session.s"
+	@echo "... src/Tree.o"
+	@echo "... src/Tree.i"
+	@echo "... src/Tree.s"
+	@echo "... src/main.o"
+	@echo "... src/main.i"
+	@echo "... src/main.s"
 .PHONY : help
 
 

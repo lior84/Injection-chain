@@ -13,8 +13,9 @@ public:
     const Graph& operator = (const Graph& other);//copy assignment operator
     const Graph& operator = ( Graph&& other );//move assignment operator
 
-    void infectNode(int nodeInd);
-    bool isInfected(int nodeInd);
+    std::vector<std::vector<int>>& getEdges();
+    void deleteAllNeighbours(int nodeToDelete);
+
 private:
     std::vector<std::vector<int>> edges;
 };

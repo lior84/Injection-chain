@@ -77,87 +77,87 @@ include CMakeFiles/Assignment1.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/Assignment1.dir/flags.make
 
-CMakeFiles/Assignment1.dir/main.cpp.o: CMakeFiles/Assignment1.dir/flags.make
-CMakeFiles/Assignment1.dir/main.cpp.o: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/spl211/spl_1st_assignment/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Assignment1.dir/main.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Assignment1.dir/main.cpp.o -c /home/spl211/spl_1st_assignment/main.cpp
+CMakeFiles/Assignment1.dir/src/main.cpp.o: CMakeFiles/Assignment1.dir/flags.make
+CMakeFiles/Assignment1.dir/src/main.cpp.o: ../src/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/spl211/spl_1st_assignment/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Assignment1.dir/src/main.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Assignment1.dir/src/main.cpp.o -c /home/spl211/spl_1st_assignment/src/main.cpp
 
-CMakeFiles/Assignment1.dir/main.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Assignment1.dir/main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/spl211/spl_1st_assignment/main.cpp > CMakeFiles/Assignment1.dir/main.cpp.i
+CMakeFiles/Assignment1.dir/src/main.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Assignment1.dir/src/main.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/spl211/spl_1st_assignment/src/main.cpp > CMakeFiles/Assignment1.dir/src/main.cpp.i
 
-CMakeFiles/Assignment1.dir/main.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Assignment1.dir/main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/spl211/spl_1st_assignment/main.cpp -o CMakeFiles/Assignment1.dir/main.cpp.s
+CMakeFiles/Assignment1.dir/src/main.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Assignment1.dir/src/main.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/spl211/spl_1st_assignment/src/main.cpp -o CMakeFiles/Assignment1.dir/src/main.cpp.s
 
-CMakeFiles/Assignment1.dir/Graph.cpp.o: CMakeFiles/Assignment1.dir/flags.make
-CMakeFiles/Assignment1.dir/Graph.cpp.o: ../Graph.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/spl211/spl_1st_assignment/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Assignment1.dir/Graph.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Assignment1.dir/Graph.cpp.o -c /home/spl211/spl_1st_assignment/Graph.cpp
+CMakeFiles/Assignment1.dir/src/Graph.cpp.o: CMakeFiles/Assignment1.dir/flags.make
+CMakeFiles/Assignment1.dir/src/Graph.cpp.o: ../src/Graph.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/spl211/spl_1st_assignment/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Assignment1.dir/src/Graph.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Assignment1.dir/src/Graph.cpp.o -c /home/spl211/spl_1st_assignment/src/Graph.cpp
 
-CMakeFiles/Assignment1.dir/Graph.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Assignment1.dir/Graph.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/spl211/spl_1st_assignment/Graph.cpp > CMakeFiles/Assignment1.dir/Graph.cpp.i
+CMakeFiles/Assignment1.dir/src/Graph.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Assignment1.dir/src/Graph.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/spl211/spl_1st_assignment/src/Graph.cpp > CMakeFiles/Assignment1.dir/src/Graph.cpp.i
 
-CMakeFiles/Assignment1.dir/Graph.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Assignment1.dir/Graph.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/spl211/spl_1st_assignment/Graph.cpp -o CMakeFiles/Assignment1.dir/Graph.cpp.s
+CMakeFiles/Assignment1.dir/src/Graph.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Assignment1.dir/src/Graph.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/spl211/spl_1st_assignment/src/Graph.cpp -o CMakeFiles/Assignment1.dir/src/Graph.cpp.s
 
-CMakeFiles/Assignment1.dir/Session.cpp.o: CMakeFiles/Assignment1.dir/flags.make
-CMakeFiles/Assignment1.dir/Session.cpp.o: ../Session.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/spl211/spl_1st_assignment/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Assignment1.dir/Session.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Assignment1.dir/Session.cpp.o -c /home/spl211/spl_1st_assignment/Session.cpp
+CMakeFiles/Assignment1.dir/src/Session.cpp.o: CMakeFiles/Assignment1.dir/flags.make
+CMakeFiles/Assignment1.dir/src/Session.cpp.o: ../src/Session.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/spl211/spl_1st_assignment/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Assignment1.dir/src/Session.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Assignment1.dir/src/Session.cpp.o -c /home/spl211/spl_1st_assignment/src/Session.cpp
 
-CMakeFiles/Assignment1.dir/Session.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Assignment1.dir/Session.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/spl211/spl_1st_assignment/Session.cpp > CMakeFiles/Assignment1.dir/Session.cpp.i
+CMakeFiles/Assignment1.dir/src/Session.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Assignment1.dir/src/Session.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/spl211/spl_1st_assignment/src/Session.cpp > CMakeFiles/Assignment1.dir/src/Session.cpp.i
 
-CMakeFiles/Assignment1.dir/Session.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Assignment1.dir/Session.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/spl211/spl_1st_assignment/Session.cpp -o CMakeFiles/Assignment1.dir/Session.cpp.s
+CMakeFiles/Assignment1.dir/src/Session.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Assignment1.dir/src/Session.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/spl211/spl_1st_assignment/src/Session.cpp -o CMakeFiles/Assignment1.dir/src/Session.cpp.s
 
-CMakeFiles/Assignment1.dir/Tree.cpp.o: CMakeFiles/Assignment1.dir/flags.make
-CMakeFiles/Assignment1.dir/Tree.cpp.o: ../Tree.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/spl211/spl_1st_assignment/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Assignment1.dir/Tree.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Assignment1.dir/Tree.cpp.o -c /home/spl211/spl_1st_assignment/Tree.cpp
+CMakeFiles/Assignment1.dir/src/Tree.cpp.o: CMakeFiles/Assignment1.dir/flags.make
+CMakeFiles/Assignment1.dir/src/Tree.cpp.o: ../src/Tree.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/spl211/spl_1st_assignment/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Assignment1.dir/src/Tree.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Assignment1.dir/src/Tree.cpp.o -c /home/spl211/spl_1st_assignment/src/Tree.cpp
 
-CMakeFiles/Assignment1.dir/Tree.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Assignment1.dir/Tree.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/spl211/spl_1st_assignment/Tree.cpp > CMakeFiles/Assignment1.dir/Tree.cpp.i
+CMakeFiles/Assignment1.dir/src/Tree.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Assignment1.dir/src/Tree.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/spl211/spl_1st_assignment/src/Tree.cpp > CMakeFiles/Assignment1.dir/src/Tree.cpp.i
 
-CMakeFiles/Assignment1.dir/Tree.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Assignment1.dir/Tree.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/spl211/spl_1st_assignment/Tree.cpp -o CMakeFiles/Assignment1.dir/Tree.cpp.s
+CMakeFiles/Assignment1.dir/src/Tree.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Assignment1.dir/src/Tree.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/spl211/spl_1st_assignment/src/Tree.cpp -o CMakeFiles/Assignment1.dir/src/Tree.cpp.s
 
-CMakeFiles/Assignment1.dir/Agent.cpp.o: CMakeFiles/Assignment1.dir/flags.make
-CMakeFiles/Assignment1.dir/Agent.cpp.o: ../Agent.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/spl211/spl_1st_assignment/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/Assignment1.dir/Agent.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Assignment1.dir/Agent.cpp.o -c /home/spl211/spl_1st_assignment/Agent.cpp
+CMakeFiles/Assignment1.dir/src/Agent.cpp.o: CMakeFiles/Assignment1.dir/flags.make
+CMakeFiles/Assignment1.dir/src/Agent.cpp.o: ../src/Agent.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/spl211/spl_1st_assignment/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/Assignment1.dir/src/Agent.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Assignment1.dir/src/Agent.cpp.o -c /home/spl211/spl_1st_assignment/src/Agent.cpp
 
-CMakeFiles/Assignment1.dir/Agent.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Assignment1.dir/Agent.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/spl211/spl_1st_assignment/Agent.cpp > CMakeFiles/Assignment1.dir/Agent.cpp.i
+CMakeFiles/Assignment1.dir/src/Agent.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Assignment1.dir/src/Agent.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/spl211/spl_1st_assignment/src/Agent.cpp > CMakeFiles/Assignment1.dir/src/Agent.cpp.i
 
-CMakeFiles/Assignment1.dir/Agent.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Assignment1.dir/Agent.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/spl211/spl_1st_assignment/Agent.cpp -o CMakeFiles/Assignment1.dir/Agent.cpp.s
+CMakeFiles/Assignment1.dir/src/Agent.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Assignment1.dir/src/Agent.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/spl211/spl_1st_assignment/src/Agent.cpp -o CMakeFiles/Assignment1.dir/src/Agent.cpp.s
 
 # Object files for target Assignment1
 Assignment1_OBJECTS = \
-"CMakeFiles/Assignment1.dir/main.cpp.o" \
-"CMakeFiles/Assignment1.dir/Graph.cpp.o" \
-"CMakeFiles/Assignment1.dir/Session.cpp.o" \
-"CMakeFiles/Assignment1.dir/Tree.cpp.o" \
-"CMakeFiles/Assignment1.dir/Agent.cpp.o"
+"CMakeFiles/Assignment1.dir/src/main.cpp.o" \
+"CMakeFiles/Assignment1.dir/src/Graph.cpp.o" \
+"CMakeFiles/Assignment1.dir/src/Session.cpp.o" \
+"CMakeFiles/Assignment1.dir/src/Tree.cpp.o" \
+"CMakeFiles/Assignment1.dir/src/Agent.cpp.o"
 
 # External object files for target Assignment1
 Assignment1_EXTERNAL_OBJECTS =
 
-Assignment1: CMakeFiles/Assignment1.dir/main.cpp.o
-Assignment1: CMakeFiles/Assignment1.dir/Graph.cpp.o
-Assignment1: CMakeFiles/Assignment1.dir/Session.cpp.o
-Assignment1: CMakeFiles/Assignment1.dir/Tree.cpp.o
-Assignment1: CMakeFiles/Assignment1.dir/Agent.cpp.o
+Assignment1: CMakeFiles/Assignment1.dir/src/main.cpp.o
+Assignment1: CMakeFiles/Assignment1.dir/src/Graph.cpp.o
+Assignment1: CMakeFiles/Assignment1.dir/src/Session.cpp.o
+Assignment1: CMakeFiles/Assignment1.dir/src/Tree.cpp.o
+Assignment1: CMakeFiles/Assignment1.dir/src/Agent.cpp.o
 Assignment1: CMakeFiles/Assignment1.dir/build.make
 Assignment1: CMakeFiles/Assignment1.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/spl211/spl_1st_assignment/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable Assignment1"

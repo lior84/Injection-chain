@@ -84,31 +84,31 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/spl211/spl_1st_assignment/Agent.cpp">
+		<Unit filename="/home/spl211/spl_1st_assignment/src/Agent.cpp">
 			<Option target="Assignment1"/>
 		</Unit>
-		<Unit filename="/home/spl211/spl_1st_assignment/Agent.h">
+		<Unit filename="/home/spl211/spl_1st_assignment/src/Agent.h">
 			<Option target="Assignment1"/>
 		</Unit>
-		<Unit filename="/home/spl211/spl_1st_assignment/Graph.cpp">
+		<Unit filename="/home/spl211/spl_1st_assignment/src/Graph.cpp">
 			<Option target="Assignment1"/>
 		</Unit>
-		<Unit filename="/home/spl211/spl_1st_assignment/Graph.h">
+		<Unit filename="/home/spl211/spl_1st_assignment/src/Graph.h">
 			<Option target="Assignment1"/>
 		</Unit>
-		<Unit filename="/home/spl211/spl_1st_assignment/Session.cpp">
+		<Unit filename="/home/spl211/spl_1st_assignment/src/Session.cpp">
 			<Option target="Assignment1"/>
 		</Unit>
-		<Unit filename="/home/spl211/spl_1st_assignment/Session.h">
+		<Unit filename="/home/spl211/spl_1st_assignment/src/Session.h">
 			<Option target="Assignment1"/>
 		</Unit>
-		<Unit filename="/home/spl211/spl_1st_assignment/Tree.cpp">
+		<Unit filename="/home/spl211/spl_1st_assignment/src/Tree.cpp">
 			<Option target="Assignment1"/>
 		</Unit>
-		<Unit filename="/home/spl211/spl_1st_assignment/Tree.h">
+		<Unit filename="/home/spl211/spl_1st_assignment/src/Tree.h">
 			<Option target="Assignment1"/>
 		</Unit>
-		<Unit filename="/home/spl211/spl_1st_assignment/main.cpp">
+		<Unit filename="/home/spl211/spl_1st_assignment/src/main.cpp">
 			<Option target="Assignment1"/>
 		</Unit>
 		<Unit filename="/home/spl211/spl_1st_assignment/CMakeLists.txt">

@@ -7,7 +7,7 @@
 
 using namespace std;
 
-Graph::Graph(std::vector<std::vector<int>> matrix) : edges(matrix) {}
+Graph::Graph(std::vector<std::vector<int>> matrix) : edges(matrix){}
 
 Graph::~Graph() {
     for(int i = 0; i < edges.size(); i++){
@@ -86,43 +86,17 @@ const Graph & Graph::operator=(Graph &&other) {
     return *this;
 }
 
-void Graph::infectNode(int nodeInd) {
-
+std::vector<std::vector<int>>& Graph::getEdges() {
+    return edges;
 }
 
-bool Graph::isInfected(int nodeInd) {}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+void Graph::deleteAllNeighbours(int nodeToDelete) {
+    for(int i = 0; i < edges.at(nodeToDelete).size(); i++){
+        if( edges.at(nodeToDelete).at(i) == 1 )
+            edges.at(nodeToDelete).at(i) = 0;
+        edges.at(i).at(nodeToDelete) = 0;
+    }
+}
 
 
 
