@@ -37,7 +37,6 @@ public:
     void addAgent(const Agent& agent);
     void setGraph(const Graph& graph);
     void enqueueInfected(int nodeInd);
-    void infectNext(int nodeInd);
     void popFromNextToBeInfected();
     void orderInfectedNodes(int ind);
     void setTreeType(string typeOf);
@@ -68,6 +67,9 @@ public:
     Graph& getGraph();
     TreeType getTreeType() const;
 
+
+    void deleteNextToBeInfected();
+
 private:
     Graph g;
     TreeType treeType;
@@ -77,10 +79,11 @@ private:
     int typeCounter;
     int simulationCycleForCycleTree;
     std::vector<int> infectedNodes;
+    std::vector<int> infectedNodesHistory;
     std::vector<int> nextToBeInfected;
     std::vector<int> nextToBeInfectedHistory;
-    std::vector<string> agentsType;//add in ctors
-    bool flag;
+    std::vector<int> nextToBeUsedByCT;
+    std::vector<string> agentsType;
 
     void createJsonFile(string path);
 };

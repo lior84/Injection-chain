@@ -18,7 +18,7 @@ inline bool instanceof(const T*) {
     return is_base_of<Base, T>::value;
 }
 
-Session::Session(const std::string &path) : g(std::vector<std::vector<int>>()), simulationCycle(0),typeCounter(0), simulationCycleForCycleTree(0), infectedNodes(std::vector<int>()), nextToBeInfected(std::vector<int>()), agentsType(std::vector<string>()), flag(false) {
+Session::Session(const std::string &path) : agents(), treeType(), infectedNodesHistory(std::vector<int>()), nextToBeInfectedHistory(std::vector<int>()), nextToBeUsedByCT(std::vector<int>()), g(std::vector<std::vector<int>>()), simulationCycle(0),typeCounter(0), simulationCycleForCycleTree(0), infectedNodes(std::vector<int>()), nextToBeInfected(std::vector<int>()), agentsType(std::vector<string>()){
     ifstream i(path);
     json j;
     i >> j;
@@ -48,6 +48,7 @@ Session::~Session() {
     infectedNodes.clear();
     nextToBeInfected.clear();
     nextToBeInfectedHistory.clear();
+    nextToBeUsedByCT.clear();
     agentsType.clear();
     for(int i = 0; i < g.getEdges().size(); i++){
         g.getEdges().at(i).clear();
@@ -56,16 +57,11 @@ Session::~Session() {
 }
 
 //copy ctor
-Session::Session(const Session &other) : g(std::vector<std::vector<int>>()), treeType(other.treeType), agents(), agentsType(), flag() {
+Session::Session(const Session &other) : g(other.g), simulationCycle(other.simulationCycle), simulationCycleForCycleTree(other.simulationCycleForCycleTree), treeType(other.treeType), agents(), agentsType() {
     for(int i = 0; i < other.agents.size(); i++){
         Agent* newAgent = other.agents.at(i)->clone();
         agents.push_back( newAgent );
     }
-    g = other.g;
-    treeType = other.treeType;
-    simulationCycle = other.simulationCycle;
-    simulationCycleForCycleTree = other.simulationCycleForCycleTree;
-    flag = other.flag;
 
     for(int i = 0; i < other.infectedNodes.size(); i++){
         infectedNodes.push_back( other.infectedNodes.at(i) );
@@ -78,17 +74,22 @@ Session::Session(const Session &other) : g(std::vector<std::vector<int>>()), tre
     for(int i = 0; i < other.agentsType.size(); i++){
         agentsType.push_back( other.agentsType.at(i) );
     }
+
+    for(int i = 0; i < other.nextToBeUsedByCT.size(); i++){
+        nextToBeUsedByCT.push_back( other.nextToBeUsedByCT.at(i) );
+    }
 }
 
 /*
  * move ctor
  */
-Session::Session(Session&& other) : g(std::vector<std::vector<int>>()), agents(other.agents), simulationCycle(other.simulationCycle), simulationCycleForCycleTree(other.simulationCycleForCycleTree), infectedNodes(other.infectedNodes), nextToBeInfected(other.nextToBeInfected), agentsType(other.agentsType), flag(other.flag){
+Session::Session(Session&& other) : g(std::vector<std::vector<int>>()), agents(other.agents), simulationCycle(other.simulationCycle), simulationCycleForCycleTree(other.simulationCycleForCycleTree), infectedNodes(other.infectedNodes), nextToBeInfected(other.nextToBeInfected), agentsType(other.agentsType){
     g = Graph(other.g);
     other.agents.clear();
-    other.infectedNodes.clear();//not sure
-    other.nextToBeInfected.clear();//not sure
+    other.infectedNodes.clear();
+    other.nextToBeInfected.clear();
     other.nextToBeInfectedHistory.clear();
+    other.nextToBeUsedByCT.clear();
     other.agentsType.clear();
 }
 
@@ -99,7 +100,6 @@ const Session & Session::operator=(const Session &other) {
         treeType = other.treeType;
         simulationCycle = other.simulationCycle;
         simulationCycleForCycleTree = other.simulationCycleForCycleTree;
-        flag = other.flag;
 
         if(!agents.empty())
             agents.clear();
@@ -130,6 +130,12 @@ const Session & Session::operator=(const Session &other) {
         for(int i = 0; i < other.agentsType.size(); i++){
             agentsType.push_back( other.agentsType.at(i) );
         }
+
+        if(!nextToBeUsedByCT.empty())
+            nextToBeUsedByCT.clear();
+        for(int i = 0; i < other.nextToBeUsedByCT.size(); i++){
+            nextToBeUsedByCT.push_back( other.nextToBeUsedByCT.at(i) );
+        }
     }
     return *this;
 }
@@ -140,7 +146,6 @@ const Session & Session::operator=(Session &&other) {
     treeType = other.treeType;
     simulationCycle = other.simulationCycle;
     simulationCycleForCycleTree = other.simulationCycleForCycleTree;
-    flag = other.flag;
 
     if(!agents.empty())
         agents.clear();
@@ -167,6 +172,11 @@ const Session & Session::operator=(Session &&other) {
     agentsType = other.agentsType;
     other.agentsType.clear();
 
+    if(!nextToBeUsedByCT.empty())
+        nextToBeUsedByCT.clear();
+    nextToBeUsedByCT = other.nextToBeUsedByCT;
+    other.nextToBeUsedByCT.clear();
+
     return *this;
 }
 
@@ -186,31 +196,19 @@ void Session::addAgent(const Agent &agent) {
     agents.push_back(newAgent);
 }
 
-void Session::setGraph(const Graph &graph) {
-    g = Graph(graph);
-}
+void Session::setGraph(const Graph &graph) {g = Graph(graph);}
 
-Graph& Session::getGraph() {
-    return g;
-}
+Graph& Session::getGraph() {return g;}
 
 void Session::simulate() {
-    agents.at(simulationCycle)->act(*this);
-    simulationCycle++;
-    typeCounter++;
-    int counter = 0;
     do{
         agents.at(simulationCycle)->act(*this);
-        typeCounter++;
+        simulationCycle++;
         if(agentsType.at(typeCounter) == "C"){
             simulationCycleForCycleTree++;
         }
-        simulationCycle++;
-        if(agentsType.at(typeCounter) == "C"){
-            continue;
-        }
-        counter++;
-    }while( flag || virusAgentLeft(typeCounter) );
+        typeCounter++;
+    }while( notConcluded() || virusAgentLeft(typeCounter) );
 
     createJsonFile("/home/spl211/jsonAns/result.json");
 }
@@ -225,41 +223,23 @@ bool Session::virusAgentLeft(int typeCounter){
 
 void Session::enqueueInfected(int nodeInd) {
     infectedNodes.push_back(nodeInd);
-}
-
-void Session::infectNext(int nodeInd) {
-    bool isInfected = false;
-    for(int i = g.getEdges().size() - 1; i >= 0; i--) {
-        if (g.getEdges().at(nodeInd).at(i) == 1) {
-            for(int j = 0; j < infectedNodes.size() && !isInfected; j++){
-                if(i == infectedNodes.at(j) )
-                    isInfected = true;
-            }
-            if(!isInfected)
-                nextToBeInfected.push_back(i);
-        }
-    }
+    infectedNodesHistory.push_back(nodeInd);
 }
 
 int Session::dequeueInfected() {
     int nodeInd = -1;
-    if(!infectedNodes.empty()) {
-        nodeInd = infectedNodes.at(infectedNodes.size() - 1);
+    if(!infectedNodesHistory.empty()) {
+        nodeInd = infectedNodesHistory.at(0);
+        infectedNodesHistory.pop_back();
     }
     return nodeInd;
 }
 
-int Session::getSimulationCycle() {
-    return simulationCycle;
-}
+int Session::getSimulationCycle() {return simulationCycle;}
 
-std::vector<int> Session::getNextToBeInfected() {
-    return nextToBeInfected;
-}
+std::vector<int> Session::getNextToBeInfected() {return nextToBeInfected;}
 
-std::vector<int> Session::getInfectedNodes() {
-    return infectedNodes;
-}
+std::vector<int> Session::getInfectedNodes() {return infectedNodes;}
 
 void Session::popFromNextToBeInfected() {
     if(!nextToBeInfected.empty()){
@@ -306,7 +286,7 @@ void Session::createJsonFile(string path) {
         std::copy(g.getEdges().at(i).begin(), g.getEdges().at(i).end()-1,
                   std::ostream_iterator<int>(vts, ", "));
         vts << g.getEdges().at(i).back();
-        vts << "],";
+        vts << "], ";
     }
     vts << "]";
 
@@ -320,33 +300,17 @@ void Session::createJsonFile(string path) {
     file << json{{"graph", vts.str()}, {"infected", infectedJ.str()}};
 }
 
-int Session::getSimulationCycleForTreeCycle() {
-    return simulationCycleForCycleTree;
-}
+int Session::getSimulationCycleForTreeCycle() {return simulationCycleForCycleTree;}
 
-void Session::setSimulationCycleForTreeCycle(int simCycle) {
-    simulationCycleForCycleTree = simCycle;
-}
+void Session::setSimulationCycleForTreeCycle(int simCycle) {simulationCycleForCycleTree = simCycle;}//
 
-void Session::setNextToBeInfected(int nodeInd) {
-    nextToBeInfected.push_back(nodeInd);
-}
+void Session::setNextToBeInfected(int nodeInd) {nextToBeInfected.push_back(nodeInd);}
 
-void Session::setAgentsType(string type) {
-    agentsType.push_back(type);
-}
+void Session::setAgentsType(string type) {agentsType.push_back(type);}
 
-void Session::setFlag(bool state) {
-    flag = state;
-}
+void Session::setNextToBeInfectedHistory(int nodeInd) {nextToBeInfectedHistory.push_back(nodeInd);}
 
-void Session::setNextToBeInfectedHistory(int nodeInd) {
-    nextToBeInfectedHistory.push_back(nodeInd);
-}
-
-std::vector<int> Session::getNextToBeInfectedHistory() {
-    return nextToBeInfectedHistory;
-}
+std::vector<int> Session::getNextToBeInfectedHistory() {return nextToBeInfectedHistory;}
 
 bool Session::isNextToBeInfectedHistory(int nodeInd) {
     for (int i = 0; i < nextToBeInfectedHistory.size(); i++) {
@@ -371,14 +335,10 @@ void Session::orderInfectedNodes(int ind) {
     }
 }
 
-int Session::getTypeCounter() {
-    return typeCounter;
-}
+int Session::getTypeCounter() {return typeCounter;}
 
-std::vector<string> Session::getAgentsType(){
-    return agentsType;
-}
+std::vector<string> Session::getAgentsType(){return agentsType;}
 
-std::vector<Agent *> Session::getAgents() {
-    return agents;
-}
+std::vector<Agent *> Session::getAgents() {return agents;}
+
+void Session::deleteNextToBeInfected() {nextToBeInfected.clear();}

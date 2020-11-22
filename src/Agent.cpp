@@ -12,7 +12,6 @@ Agent::~Agent(){}
 
 Agent *const Agent::clone() const {}
 
-
 ContactTracer::ContactTracer() {}
 
 ContactTracer::~ContactTracer()  {
@@ -20,28 +19,15 @@ ContactTracer::~ContactTracer()  {
 }
 
 void ContactTracer::act(Session &session) {
-    int nodeInd;
-    int currTypeCount = session.getTypeCounter()-1;
-    if(currTypeCount-1 > 0 && session.getAgentsType().at(currTypeCount-1)=="V") {
-        while (session.getAgentsType().at(currTypeCount) == "V") {
-            currTypeCount--;
-        }
-        currTypeCount++;
-        nodeInd = session.getAgents().at(currTypeCount)->getNodeInd();
-    }
-    else {
-        nodeInd = session.dequeueInfected();
-    }
+    int nodeInd= session.dequeueInfected();
+
     Tree *currTree;
     currTree = currTree->createTree(session, nodeInd);
     int nodeToDelete = currTree->traceTree();
-//    if(currTree->getchildren().size() == 0)
-//        session.setSimulationCycleForTreeCycle(session.getSimulationCycleForTreeCycle() - 1);
+
     if (nodeToDelete != -1){
         session.getGraph().deleteAllNeighbours(nodeToDelete);
     }
-    session.addAgent(ContactTracer());
-    session.setAgentsType("C");
 
     delete currTree;
 }
@@ -50,17 +36,14 @@ Agent *const ContactTracer::clone() const {
     return new ContactTracer(*this);
 }
 
-int ContactTracer::getNodeInd() {
-    return -1;
-}
+int ContactTracer::getNodeInd() {return -1;}
 
 Virus::Virus(int nodeInd) : nodeInd(nodeInd) {}
 
-Virus::~Virus(){
-    //delete this;
-}
+Virus::~Virus(){}
 
 void Virus::act(Session &session) {
+    int newVirusesCount = 0;
     session.enqueueInfected(nodeInd);
     for(int i = 0;  i < session.getInfectedNodes().size(); i++){
         for(int j = 0; j < session.getGraph().getEdges().at(session.getInfectedNodes().at(i)).size(); j++){
@@ -68,31 +51,26 @@ void Virus::act(Session &session) {
             {
                 session.setNextToBeInfectedHistory(j);
                 session.setNextToBeInfected(j);
+                newVirusesCount++;
                 break;
             }
         }
     }
-    if(!session.getNextToBeInfected().empty())
-        session.setFlag(true);
-    else
-        session.setFlag(false);
 
+    int loopCount = 0;
     while(!session.getNextToBeInfected().empty()) {
         session.addAgent(Virus(session.getNextToBeInfected().at(0)));
         session.setAgentsType("V");
+        if(loopCount==0) {
+            session.addAgent(ContactTracer());
+            session.setAgentsType("C");
+        }
+        newVirusesCount++;
         session.popFromNextToBeInfected();
+        loopCount++;
     }
-
-//    session.enqueueInfected(nodeInd);
-//    session.infectNext(nodeInd);
-//    if(!session.getNextToBeInfected().empty()) {
-//        session.addAgent(Virus(session.getNextToBeInfected().back()));
-//        session.popFromNextToBeInfected();
-//    }
 }
 
-Agent *const Virus::clone() const {
-    return new Virus(*this);
-}
+Agent *const Virus::clone() const {return new Virus(*this);}
 
 int Virus::getNodeInd() {return nodeInd;}

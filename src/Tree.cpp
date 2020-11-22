@@ -1,12 +1,12 @@
 #include "Tree.h"
 
-Tree::Tree(int rootLabel):node(rootLabel), children(std::vector<Tree*>()) {}
+Tree::Tree(int rootLabel):node(rootLabel), children(std::vector<Tree*>()), depth(0), nodesCounter(0) {}
 
-Tree::Tree(const Tree &other):node(other.node) {// copy ctor
+Tree::Tree(const Tree &other):node(other.node), children(std::vector<Tree*>()), depth(other.depth), nodesCounter(other.nodesCounter) {// copy ctor
     copyAllChildren(other);
 }
 
-Tree::Tree(Tree &&other) : node(other.node) {//move ctor
+Tree::Tree(Tree &&other) : node(other.node), children(std::vector<Tree*>()), depth(other.depth), nodesCounter(other.nodesCounter) {//move ctor
     for (int i = 0; i < other.children.size(); i++) {
         children.at(i) = other.children.at(i);
         other.children.at(i)= nullptr ;
@@ -40,6 +40,7 @@ void Tree::addChild(const Tree &child) {
     Tree *newchild = child.clone();
     children.push_back(newchild);
 }
+
 void Tree::deleteAllChildren() {
     delete children.at(0)->children.at(0);
 
@@ -54,20 +55,9 @@ Tree::~Tree() {
     }
 }
 
-//void Tree:: clear(){
-//    if(!children.empty()){
-//        for(auto & i : children){
-//            delete i;
-//            i = nullptr ;
-//        }
-//    }
-//}
-
 CycleTree::CycleTree( int rootLabel, int currCycle)  : Tree(rootLabel), currCycle(currCycle){} // constructor for tree (cycle tree class)
 
-Tree *const CycleTree::clone() const {
-    return new CycleTree(node, currCycle);
-}
+Tree *const CycleTree::clone() const {return new CycleTree(node, currCycle);}
 
 int CycleTree::traceTree() {
     Tree* curr = this ;
@@ -82,9 +72,7 @@ int CycleTree::traceTree() {
 
 MaxRankTree::MaxRankTree(int rootLabel) : Tree(rootLabel) {} //constructor for tree (ranked tree class)
 
-Tree *const MaxRankTree::clone() const {
-    return new MaxRankTree(node);
-}
+Tree *const MaxRankTree::clone() const {return new MaxRankTree(node);}
 
 int MaxRankTree::traceTree() {
     int maxVal = 0, maxInd = -1;
@@ -115,13 +103,9 @@ int MaxRankTree::traceTree() {
 
 RootTree::RootTree(int rootLabel) : Tree(rootLabel) {} //constructor for tree (root tree class)
 
-int RootTree::traceTree() { //func for root tree
-    return node;
-}
+int RootTree::traceTree() {return node;}
 
-Tree *const RootTree::clone() const {
-    return new RootTree(node);
-}
+Tree *const RootTree::clone() const {return new RootTree(node);}
 
 void Tree::copyAllChildren(const Tree& other){
     for(auto i : other.children){
@@ -135,7 +119,6 @@ Tree *Tree::createTree(const Session &session, int rootLabel) {
 
 Tree * Tree::BFS(Session &session, int rootLabel) {
     std::queue<Tree*> q;
-    int depths = 0;
     std::vector<bool> visited ;
     visited.reserve(session.getGraph().getEdges().size());
     for(int i = 0 ; i < session.getGraph().getEdges().size();i++){
@@ -188,22 +171,12 @@ Tree * Tree::BFS(Session &session, int rootLabel) {
     return newtree;
 }
 
-int Tree::getDepth() {
-    return depth;
-}
+int Tree::getDepth() {return depth;}
 
-vector<Tree *>& Tree::getChildren() {
-    return children;
-}
+vector<Tree *>& Tree::getChildren() {return children;}
 
-int Tree::getNode() {
-    return node ;
-}
+int Tree::getNode() {return node ;}
 
-int Tree::getChildrenSize() {
-    return children.size();
-}
+int Tree::getChildrenSize() {return children.size();}
 
-void Tree::setDepth(int depth_) {
-    depth = depth_;
-}
+void Tree::setDepth(int depth_) {depth = depth_;}

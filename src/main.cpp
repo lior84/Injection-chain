@@ -1,15 +1,15 @@
 #include <iostream>
 #include "Session.h"
-#include "Graph.h"
+
 using namespace std;
 
-
 int main(int argc, char** argv){
-
-    Session s("/home/spl211/spl_1st_assignment/json_files/config4.json");
-
-    s.simulate();
-
+    if(argc != 2){
+        cout << "usage cTrace <config_path>" << endl;
+        return 0;
+    }
+    Session sess(argv[1]);
+    sess.simulate();
     return 0;
 }
 
