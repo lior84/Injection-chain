@@ -1,4 +1,4 @@
-#include "Tree.h"
+#include "../include/Tree.h"
 
 Tree::Tree(int rootLabel):node(rootLabel), children(std::vector<Tree*>()), depth(0), nodesCounter(0) {}
 

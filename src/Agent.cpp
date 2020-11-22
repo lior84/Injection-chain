@@ -2,9 +2,9 @@
 // Created by spl211 on 10/11/2020.
 //
 
-#include "Agent.h"
-#include "Graph.h"
-#include "Session.h"
+#include "../include/Agent.h"
+#include "../include/Graph.h"
+#include "../include/Session.h"
 
 Agent::Agent(){}
 

@@ -2,7 +2,7 @@
 // Created by spl211 on 10/11/2020.
 //
 
-#include "Session.h"
+#include "../include/Session.h"
 #include <algorithm>
 #include <sstream>
 #include <iterator>
