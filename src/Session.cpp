@@ -18,7 +18,7 @@ inline bool instanceof(const T*) {
     return is_base_of<Base, T>::value;
 }
 
-Session::Session(const std::string &path) : agents(), treeType(), infectedNodesHistory(std::vector<int>()), nextToBeInfectedHistory(std::vector<int>()), nextToBeUsedByCT(std::vector<int>()), g(std::vector<std::vector<int>>()), simulationCycle(0),typeCounter(0), simulationCycleForCycleTree(0), infectedNodes(std::vector<int>()), nextToBeInfected(std::vector<int>()), agentsType(std::vector<string>()){
+Session::Session(const std::string &path) : agents(), treeType(), g(std::vector<std::vector<int>>()), simulationCycle(0),typeCounter(0), simulationCycleForCycleTree(0), agentsType(){
     ifstream i(path);
     json j;
     i >> j;
@@ -50,6 +50,8 @@ Session::~Session() {
     nextToBeInfectedHistory.clear();
     nextToBeUsedByCT.clear();
     agentsType.clear();
+    infectedNodesHistory.clear();
+
     for(int i = 0; i < g.getEdges().size(); i++){
         g.getEdges().at(i).clear();
     }
@@ -210,7 +212,7 @@ void Session::simulate() {
         typeCounter++;
     }while( notConcluded() || virusAgentLeft(typeCounter) );
 
-    createJsonFile("/home/spl211/jsonAns/result.json");
+    createJsonFile("/home/spl211/finalProject1/spl_1st_assignment/output.json");
 }
 
 bool Session::virusAgentLeft(int typeCounter){
@@ -279,25 +281,16 @@ bool Session::isInNextInfected(int nodeInd) {
 void Session::createJsonFile(string path) {
     std::ostringstream vts;
     std::ostringstream infectedJ;
-
-    vts << "[";
-    for(int i = 0; i < g.getEdges().size(); i++){
-        vts << "[";
-        std::copy(g.getEdges().at(i).begin(), g.getEdges().at(i).end()-1,
-                  std::ostream_iterator<int>(vts, ", "));
-        vts << g.getEdges().at(i).back();
-        vts << "], ";
-    }
-    vts << "]";
-
-    infectedJ << "[";
-    std::copy(infectedNodes.begin(), infectedNodes.end()-1,
-              std::ostream_iterator<int>(infectedJ, ", "));
-    infectedJ << infectedNodes.back();
-    infectedJ << "]";
-
     std::ofstream file(path);
-    file << json{{"graph", vts.str()}, {"infected", infectedJ.str()}};
+
+    std::vector<std::vector<int>> tmp;
+    for(int i = 0; i < g.getEdges().size(); i++) {
+        tmp.push_back(g.getEdges().at(i));
+    }
+    file << json{{"graph", tmp}, {"infected", infectedNodes}};
+    for(int i = 0; i < g.getEdges().size(); i++) {
+        tmp.at(i).clear();
+    }
 }
 
 int Session::getSimulationCycleForTreeCycle() {return simulationCycleForCycleTree;}

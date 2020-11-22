@@ -13,4 +13,4 @@ int main(int argc, char** argv){
     return 0;
 }
 
-//valgrind --leak-check=full --show-reachable=yes ./bin/cTrace ./config1.json
+//valgrind --leak-check=fullmake --show-reachable=yes ./bin/cTrace ./config1.json

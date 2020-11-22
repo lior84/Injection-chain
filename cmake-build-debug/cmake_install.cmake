@@ -1,4 +1,4 @@
-# Install script for directory: /home/spl211/spl_1st_assignment
+# Install script for directory: /home/spl211/finalProject1/spl_1st_assignment
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/spl211/spl_1st_assignment/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/spl211/finalProject1/spl_1st_assignment/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
